@@ -7,8 +7,18 @@ class RedmartSinatra < Sinatra::Base
   # GET /users LIST all the books
   get '/users' do
     @users = User.all
-    erb :'users'
+    erb :'users/index'
   end
+
+  get '/users/:id' do
+    @user = User.find(params[:id])
+    erb :'users/show'
+  end
+
+  # get '/users/name/:name' do
+  #   @user = User.where(name: params[:name]).first
+  #   erb :'each_user_name'
+  # end
 
   get '/main' do
     erb 'This is the main page.'

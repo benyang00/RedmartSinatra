@@ -12,7 +12,7 @@ class RedmartSinatra < Sinatra::Base #Controller
 
   get '/users/new' do
     #Add new users
-    erb: :'users/new'
+    erb :'users/new'
   end
 
   get '/users/:id' do

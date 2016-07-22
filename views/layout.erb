@@ -3,11 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title>RedmartSinatra</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="<%= request.base_url %>/css/style.css" media="screen" title="no title" charset="utf-8">
   </head>
   <body>
     <h1>Fake-mart</h1>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/users">Users</a></li>
+      <li><a href="/users/new">Register</a></li>
+    </ul>
     <%= yield %>
   </body>
   <script src="<%= request.base_url %>/js/script.js" charset="utf-8"></script>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </html>

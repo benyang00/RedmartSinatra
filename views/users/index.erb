@@ -1,48 +1,51 @@
-<ul>
-  <% @users.each do |user| %>
-  <li>
-    <%= user %>
-  </li>
-  <% end %>
-</ul>
-
 <table class="table table-striped">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Address</th>
-      <th>Password</th>
-      <th>Credit Card Number</th>
-      <th>Date Joined</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @users.each do |user| %>
-    <tr>
-      <td>
-        <%= user[:id] %>
-      </td>
-      <td>
-        <%= user[:name] %>
-      </td>
-      <td>
-        <%= user[:email] %>
-      </td>
-      <td>
-        <%= user[:address] %>
-      </td>
-      <td>
-        <%= user[:password] %>
-      </td>
-      <td>
-        <%= user[:cc_number] %>
-      </td>
-      <td>
-        <%= user[:date_joined] %>
-      </td>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Password</th>
+            <th>Credit Card Number</th>
+            <th>Date Joined</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @users.each do |user| %>
+        <tr>
+            <td>
+                <%= user[:id] %>
+            </td>
+            <td>
+                <a href="/users/<%= user[:id] %>"><%= user[:name] %></a>
+            </td>
+            <td>
+                <%= user[:email] %>
+            </td>
+            <td>
+                <%= user[:address] %>
+            </td>
+            <td>
+                <%= user[:password] %>
+            </td>
+            <td>
+                <%= user[:cc_number] %>
+            </td>
+            <td>
+                <%= user[:date_joined] %>
+            </td>
+            <td>
+                <a href="/users/<%= user[:id] %>">View</a>
+            </td>
+            <td>
+                <form action="/users/<%= user.id %>" method="post">
+                    <input type="hidden" name="_method" value="delete">
+                    <input type="submit" value="Delete">
+                </form>
+            </td>
+        </td>
     </tr>
     <% end %>
-  </tbody>
+</tbody>
 </table>

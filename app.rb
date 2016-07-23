@@ -17,7 +17,6 @@ class RedmartSinatra < Sinatra::Base #Controller
   end
 
   post '/users' do
-    puts params[:user]
     @new_user = User.new(params[:user])
 
     if @new_user.save
@@ -34,11 +33,6 @@ class RedmartSinatra < Sinatra::Base #Controller
     erb :"users/show"
   end
 
-  #page for editing user profile
-  get '/users/:id/edit' do
-    erb :"users/edit"
-  end
-
   #page for deleting user profile
   delete '/users/:id' do
     @deleted_user = User.find(params[:id])
@@ -51,8 +45,19 @@ class RedmartSinatra < Sinatra::Base #Controller
 
   end
 
-  # post '/users' do
-  #
-  # end
+  #page for editing user profile
+  get '/users/:id/edit' do
+    @user = User.find(params[:id])
+    erb :"users/edit"
+  end
+
+  put '/users/:id' do
+    @updated_user = User.find(params[:id])
+
+    if @updated_user.update_attributes(params[:user])
+      redirect("/users")
+    end
+
+  end
 
 end

@@ -1,27 +1,27 @@
 <h3>Edit your profile here</h3>
 
 <form action="/users/<%= @user.id %>" method="post">
-  <input type="hidden" name="_method" value="put">
+    <input type="hidden" name="_method" value="put">
 
-  <div class="form-group">
+    <div class="form-group">
 
-  <label for="name">Name</label>
-  <input id="name" type="text" name="user[name]" value="<%= @updating_user[:name] %>">
+        <label for="name">Name</label>
+        <input id="name" type="text" name="user[name]" value="<%= @updating_user[:name] %>">
 
-  <label for="email">Email</label>
-  <input id="email " type="text" name="user[email]" value="<%= @updating_user[:email] %>">
+        <label for="email">Email</label>
+        <input id="email " type="text" name="user[email]" value="<%= @updating_user[:email] %>">
 
-  <label for="address">Address</label>
-  <input id="address" type="text" name="user[address]" value="<%= @updating_user[:address] %>">
+        <label for="address">Address</label>
+        <input id="address" type="text" name="user[address]" value="<%= @updating_user[:address] %>">
 
-  <label for="password">Password</label>
-  <input id="password" type="text" name="user[password]" value="<%= @updating_user[:password] %>">
+        <label for="password">Password</label>
+        <input id="password" type="text" name="user[password]" value="<%= @updating_user[:password] %>">
 
-  <label for="ccnumber">Credit Card Number</label>
-  <input id="ccnumber" type="text" name="user[cc_number]" value="<%= @updating_user[:cc_number] %>">
+        <label for="ccnumber">Credit Card Number</label>
+        <input id="ccnumber" type="text" name="user[cc_number]" value="<%= @updating_user[:cc_number] %>">
 
-  <input type="submit" name="name" value="submit">
+        <input type="submit" name="name" value="submit">
 
-</div>
+    </div>
 
 </form>
